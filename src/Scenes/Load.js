@@ -10,7 +10,10 @@ class Load extends Phaser.Scene {
         this.load.atlas("platformer_characters", "tilemap-characters-packed.png", "tilemap-characters-packed.json");
 
         // Load tilemap information
+        
+        this.load.image("gameover_screen", "end_screen.png");
         this.load.image("tilemap_tiles", "tilemap_packed.png");                         // Packed tilemap
+        this.load.image("tilemap_background", "tilemap-backgrounds_packed.png");
         this.load.tilemapTiledJSON("platformer-level-1", "platformer-level-1.tmj");   // Tilemap in JSON
 
         // Load the tilemap as a spritesheet
@@ -18,6 +21,12 @@ class Load extends Phaser.Scene {
             frameWidth: 18,
             frameHeight: 18
         });
+        this.load.bitmapFont('cfont', "supercomics_0.png", "supercomics.fnt");
+        this.load.audio('jump1', "phaseJump1.ogg");
+        this.load.audio('jump2', "phaseJump2.ogg");
+        this.load.audio('jump3', "phaseJump3.ogg");
+        this.load.audio('dead', "error_003.ogg");
+        this.load.audio('collect', "toggle_002.ogg");
 
         // Oooh, fancy. A multi atlas is a texture atlas which has the textures spread
         // across multiple png files, so as to keep their size small for use with
